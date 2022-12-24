@@ -15,31 +15,30 @@ class ViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func canonShotPressed(_ sender: Any) {
-        print("DEBUG:: canon Pressed")
+        tankAnchor?.notifications.cannonFire.post()
     }
     
     @IBAction func forwardButtonPressed(_ sender: Any) {
-        print("DEBUG:: forwardTank Pressed")
-
+        tankAnchor?.notifications.tankForward.post()
     }
     
     @IBAction func rightButtonTankPressed(_ sender: Any) {
-        print("DEBUG:: rightTank Pressed")
+        tankAnchor?.notifications.tankRight.post()
 
     }
     
     @IBAction func rightButtonCanonPressed(_ sender: Any) {
-        print("DEBUG:: rightCanon Pressed")
+        tankAnchor?.notifications.turretRight.post()
 
     }
     
     @IBAction func leftButtonCanonPressed(_ sender: Any) {
-        print("DEBUG:: leftCanon Pressed")
+        tankAnchor?.notifications.turretLeft.post()
 
     }
     
     @IBAction func leftButtonTankPressed(_ sender: Any) {
-        print("DEBUG:: leftTank Pressed")
+        tankAnchor?.notifications.tankLeft.post()
 
     }
     
@@ -55,6 +54,7 @@ class ViewController: UIViewController {
     // MARK: - Helper Functions
     func configureARExperience() {
         tankAnchor = try! TinyToyTank.load_TinyToyTank()
+        tankAnchor?.cannon?.setParent(tankAnchor?.tank, preservingWorldTransform: true)
         arView.scene.anchors.append(tankAnchor!)
     }
 }
