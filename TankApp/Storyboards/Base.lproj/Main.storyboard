@@ -33,11 +33,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="150.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="CannonFire"/>
+                                                        <connections>
+                                                            <action selector="canonShotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuN-hH-hAd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wce-Mw-2IM">
                                                         <rect key="frame" x="207" y="0.0" width="207" height="150.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="TankForward"/>
+                                                        <connections>
+                                                            <action selector="forwardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qnb-qO-tCQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -48,21 +54,33 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="49.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="TankLeft"/>
+                                                        <connections>
+                                                            <action selector="leftButtonTankPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UMP-bq-r62"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0z-OF-F0W">
                                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="49.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="TurretLeft"/>
+                                                        <connections>
+                                                            <action selector="leftButtonCanonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJy-B9-91y"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npM-4r-8yc">
                                                         <rect key="frame" x="207" y="0.0" width="103.5" height="49.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="TurretRight"/>
+                                                        <connections>
+                                                            <action selector="rightButtonCanonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrz-eY-Wy0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75u-pT-fXr">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="49.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="TankRight"/>
+                                                        <connections>
+                                                            <action selector="rightButtonTankPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bzn-sa-jFA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
