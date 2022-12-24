@@ -10,11 +10,22 @@ import RealityKit
 
 class ViewController: UIViewController {
     // MARK: - Properties
-    @IBOutlet var arView: ARView!
+    // 1
     var tankAnchor: TinyToyTank._TinyToyTank?
+    var isActionPlaying: Bool = false
+    
+    // 2
+    @IBOutlet var arView: ARView!
     
     // MARK: - Actions
     @IBAction func canonShotPressed(_ sender: Any) {
+        if self.isActionPlaying {
+            return
+        }
+        else {
+            self.isActionPlaying = true
+        }
+        
         tankAnchor?.notifications.cannonFire.post()
     }
     
@@ -55,6 +66,9 @@ class ViewController: UIViewController {
     func configureARExperience() {
         tankAnchor = try! TinyToyTank.load_TinyToyTank()
         tankAnchor?.cannon?.setParent(tankAnchor?.tank, preservingWorldTransform: true)
+        tankAnchor?.actions.actionComplete.onAction = { _ in
+            self.isActionPlaying = false
+        }
         arView.scene.anchors.append(tankAnchor!)
     }
 }
