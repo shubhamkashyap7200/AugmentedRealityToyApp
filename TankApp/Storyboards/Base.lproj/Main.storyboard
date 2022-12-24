@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,17 +13,123 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="TankApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <arView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" enableRayTracedShadows="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="3Hj-os-DEd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arView>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwg-dl-5W0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxt-hz-Xsi">
+                                <rect key="frame" x="0.0" y="646" width="414" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uei-pL-7wg">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qgg-l8-lGc">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T59-HY-Nnf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="207" height="150.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="CannonFire"/>
+                                                        <connections>
+                                                            <action selector="canonShotPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuN-hH-hAd"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wce-Mw-2IM">
+                                                        <rect key="frame" x="207" y="0.0" width="207" height="150.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="TankForward"/>
+                                                        <connections>
+                                                            <action selector="forwardButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qnb-qO-tCQ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-EI-an1">
+                                                <rect key="frame" x="0.0" y="150.5" width="414" height="49.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m2-yb-LAy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="49.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="TankLeft"/>
+                                                        <connections>
+                                                            <action selector="leftButtonTankPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UMP-bq-r62"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0z-OF-F0W">
+                                                        <rect key="frame" x="103.5" y="0.0" width="103.5" height="49.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="TurretLeft"/>
+                                                        <connections>
+                                                            <action selector="leftButtonCanonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJy-B9-91y"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npM-4r-8yc">
+                                                        <rect key="frame" x="207" y="0.0" width="103.5" height="49.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="TurretRight"/>
+                                                        <connections>
+                                                            <action selector="rightButtonCanonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrz-eY-Wy0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75u-pT-fXr">
+                                                        <rect key="frame" x="310.5" y="0.0" width="103.5" height="49.5"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="TankRight"/>
+                                                        <connections>
+                                                            <action selector="rightButtonTankPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bzn-sa-jFA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gmb-EI-an1" firstAttribute="top" secondItem="Uei-pL-7wg" secondAttribute="top" constant="150.5" id="4Ue-fj-Aqf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="fES-xM-9D0"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uei-pL-7wg" secondAttribute="bottom" constant="50" id="geX-fd-NGz"/>
+                                    <constraint firstItem="Uei-pL-7wg" firstAttribute="top" secondItem="Pxt-hz-Xsi" secondAttribute="top" id="jUC-SS-K8I"/>
+                                    <constraint firstItem="Uei-pL-7wg" firstAttribute="leading" secondItem="Pxt-hz-Xsi" secondAttribute="leading" id="jzg-YP-snm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uei-pL-7wg" secondAttribute="trailing" id="xkZ-Tm-JaZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0xl-x9-CfA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Pxt-hz-Xsi" secondAttribute="bottom" id="2BF-Wz-247"/>
+                            <constraint firstItem="Nwg-dl-5W0" firstAttribute="trailing" secondItem="0xl-x9-CfA" secondAttribute="trailing" id="9zD-4p-pDc"/>
+                            <constraint firstAttribute="bottom" secondItem="Nwg-dl-5W0" secondAttribute="bottom" id="StW-nT-AV0"/>
+                            <constraint firstItem="Nwg-dl-5W0" firstAttribute="leading" secondItem="0xl-x9-CfA" secondAttribute="leading" id="fId-Zc-D3c"/>
+                            <constraint firstItem="Nwg-dl-5W0" firstAttribute="top" secondItem="3Hj-os-DEd" secondAttribute="top" id="hsq-g1-3DT"/>
+                            <constraint firstItem="Pxt-hz-Xsi" firstAttribute="leading" secondItem="0xl-x9-CfA" secondAttribute="leading" id="nR3-bm-Yym"/>
+                            <constraint firstItem="Pxt-hz-Xsi" firstAttribute="trailing" secondItem="0xl-x9-CfA" secondAttribute="trailing" id="yO6-DJ-0Ue"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
+                        <outlet property="arView" destination="Nwg-dl-5W0" id="k9N-i6-2qO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="134"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CannonFire" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="TankForward" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="TankLeft" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="TankRight" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="TurretLeft" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="TurretRight" width="85.333335876464844" height="85.333335876464844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
